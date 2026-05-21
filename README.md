@@ -195,6 +195,6 @@ npm run dev
 
 Sakeena Bi
 
-LinkedIn: https://www.linkedin.com/in/sakeena-bi-2484a7261/
+LinkedIn: <a href="https://www.linkedin.com/in/sakeena-bi-2484a7261/" target="_blank"></a>
 
-GitHub: https://github.com/sakeenabi03
+GitHub: <a href="https://github.com/sakeenabi03" target="_blank"></a>
