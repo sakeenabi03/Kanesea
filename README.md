@@ -193,8 +193,8 @@ npm run dev
 
 ## Author
 
-Sakeena Bi
+**Sakeena Bi**
 
-LinkedIn: <a href="https://www.linkedin.com/in/sakeena-bi-2484a7261/" target="_blank"></a>
+LinkedIn: [sakeena-bi-2484a7261](https://www.linkedin.com/in/sakeena-bi-2484a7261/)
 
-GitHub: <a href="https://github.com/sakeenabi03" target="_blank"></a>
+GitHub: [sakeenabi03](https://github.com/sakeenabi03)
