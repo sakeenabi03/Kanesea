@@ -23,24 +23,6 @@ jobs:
 
       - run: npm install
 
-#frontend build
-  build-frontend:
-    runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: frontend
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - run: npm install --legacy-peer-deps
-
-      - run: npm run build    
 
 #docker backend
   docker-backend:
@@ -63,6 +45,25 @@ jobs:
       - name: Push Backend Image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/kanesea-backend:latest
+          
+#frontend build
+  build-frontend:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install --legacy-peer-deps
+
+      - run: npm run build    
 
 #docker frontend
   docker-frontend:
