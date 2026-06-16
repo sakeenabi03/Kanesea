@@ -1,0 +1,16 @@
+services:
+  backend:
+    image: kanesea-backend
+    container_name: kanesea-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+
+  frontend:
+    image: kanesea-frontend
+    container_name: kanesea-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
