@@ -23,7 +23,12 @@ jobs:
 
       - run: npm install
 
-      - run: npm run start &
+      - name: Start backend
+        env:
+          RAZORPAY_KEY_ID: ${{ secrets.RAZORPAY_KEY_ID }}
+          RAZORPAY_KEY_SECRET: ${{ secrets.RAZORPAY_KEY_SECRET }}
+        run: npm start
+        
 #frontend build
   build-frontend:
     runs-on: ubuntu-latest
