@@ -41,3 +41,47 @@ jobs:
       - run: npm install --legacy-peer-deps
 
       - run: npm run build    
+
+#docker backend
+  docker-backend:
+    needs: build-backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build Backend Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/kanesea-backend:latest ./backend
+
+      - name: Push Backend Image
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}/kanesea-backend:latest
+
+#docker frontend
+  docker-frontend:
+    needs: build-frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build Frontend Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/kanesea-frontend:latest ./frontend
+
+      - name: Push Frontend Image
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}/kanesea-frontend:latest              
