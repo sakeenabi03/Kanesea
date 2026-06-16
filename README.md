@@ -86,8 +86,8 @@ This project was enhanced with DevOps practices to improve portability, automati
 The application images are published to Docker Hub and can be pulled using:
 
 ```bash
-docker pull <your-dockerhub-username>/kanesea-frontend
-docker pull <your-dockerhub-username>/kanesea-backend
+docker pull sakeenabi/kanesea-frontend
+docker pull sakeenabi/kanesea-backend
 ```
 
 ---
@@ -140,8 +140,6 @@ Metrics monitored include:
 - Memory utilization
 - Network activity
 - Container health and status
-
----
 
 ---
 
@@ -345,6 +343,6 @@ Grafana dashboards were configured to visualize infrastructure metrics.
 
 **Sakeena Bi**
 
-LinkedIn: https://www.linkedin.com/in/sakeena-bi-2484a7261/
+LinkedIn: https://www.linkedin.com/in/sakeenabi
 
 GitHub: https://github.com/sakeenabi03
