@@ -52,11 +52,96 @@ The platform allows users to browse products, search items, manage carts, place 
 - JWT Authentication
 - Multer
 
+### DevOps
+- Docker
+- Docker Compose
+- GitHub Actions
+- Docker Hub
+- Prometheus
+- Grafana
+- cAdvisor
+
 ### Database
 - MongoDB
 
 ### Payment Gateway
 - Razorpay
+
+---
+
+# DevOps Implementation
+
+This project was enhanced with DevOps practices to improve portability, automation, and observability.
+
+## Containerization
+- Dockerized the frontend (React + Nginx).
+- Dockerized the backend (Node.js + Express).
+- Created separate Docker images for frontend and backend services.
+
+### Docker Images
+- `kanesea-frontend`
+- `kanesea-backend`
+
+### Docker Hub Repositories
+The application images are published to Docker Hub and can be pulled using:
+
+```bash
+docker pull <your-dockerhub-username>/kanesea-frontend
+docker pull <your-dockerhub-username>/kanesea-backend
+```
+
+---
+
+## Multi-Container Orchestration
+
+Docker Compose was used to orchestrate multiple services:
+
+- Frontend Container
+- Backend Container
+- Monitoring Stack
+
+Services can be started using:
+
+```bash
+docker compose up -d
+```
+
+---
+
+## Continuous Integration (CI)
+
+GitHub Actions was configured to automate the build process.
+
+### CI Pipeline Tasks
+
+- Backend dependency installation.
+- Frontend dependency installation.
+- Frontend production build verification.
+- Docker image build automation.
+- Automatic publishing of Docker images to Docker Hub.
+
+The pipeline is triggered automatically on every push to the `main` branch.
+
+---
+
+## Monitoring and Observability
+
+A monitoring stack was integrated to provide visibility into container health and performance.
+
+### Monitoring Components
+
+- **cAdvisor** – Collects Docker container metrics.
+- **Prometheus** – Scrapes and stores metrics.
+- **Grafana** – Visualizes metrics using dashboards.
+
+Metrics monitored include:
+
+- CPU utilization
+- Memory utilization
+- Network activity
+- Container health and status
+
+---
 
 ---
 
@@ -190,6 +275,71 @@ npm run dev
 
 ### View Seller Forms
 <img src="./screenshots/11.png" width="800"/>
+
+---
+
+# DevOps Screenshots
+
+## Docker Hub Images
+
+The following images were successfully built and published to Docker Hub.
+
+### Backend Docker Image
+
+<img src="./screenshots/docker-backend.png" width="800"/>
+
+### Frontend Docker Image
+
+<img src="./screenshots/docker-frontend.png" width="800"/>
+
+---
+
+## cAdvisor Monitoring
+
+cAdvisor was used to monitor Docker container resource consumption.
+
+### Container Resource Overview
+
+<img src="./screenshots/cadvisor-overview.png" width="800"/>
+
+### CPU and Memory Metrics
+
+<img src="./screenshots/cadvisor-metrics.png" width="800"/>
+
+---
+
+## Prometheus Monitoring
+
+Prometheus was configured to scrape metrics exposed by cAdvisor.
+
+### Prometheus Targets
+
+<img src="./screenshots/prometheus-targets.png" width="800"/>
+
+---
+
+## Grafana Dashboards
+
+Grafana dashboards were configured to visualize infrastructure metrics.
+
+### CPU and Memory Dashboard
+
+<img src="./screenshots/grafana-cpu-memory.png" width="800"/>
+
+### Network and Container Dashboard
+
+<img src="./screenshots/grafana-network-containers.png" width="800"/>
+
+---
+
+# DevOps Highlights
+
+- Implemented Docker-based containerization for frontend and backend services.
+- Designed multi-container environments using Docker Compose.
+- Automated build workflows using GitHub Actions.
+- Published container images to Docker Hub.
+- Integrated Prometheus and Grafana for monitoring and observability.
+- Monitored container-level CPU, memory, and network metrics using cAdvisor.
 
 ## Author
 
